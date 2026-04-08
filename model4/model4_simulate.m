@@ -1,0 +1,23 @@
+function [t, y, observables] = model4_simulate(model, y0, tEval)
+if nargin < 2 || isempty(y0)
+    y0 = model.y0;
+end
+
+if nargin < 3 || isempty(tEval)
+    tStop = model.constants.Timeinput1 + model.constants.Tinfinput1 + 3000;
+    tEval = linspace(0, tStop, 2001);
+end
+
+odeOptions = odeset( ...
+    'RelTol', 1e-8, ...
+    'AbsTol', 1e-10, ...
+    'NonNegative', 1:numel(model.stateNames));
+
+[t, y] = ode15s( ...
+    @(t, y) model4_ode(t, y, model.params, model.constants), ...
+    tEval, ...
+    y0, ...
+    odeOptions);
+
+observables = model4_observables(t, y, model.params, model.constants);
+end
