@@ -50,7 +50,7 @@ The shared helper [model4_run_sin1_sweep.m](/Users/cecilia/Desktop/BME530/mTORC_
 - the baseline validation workflow
 - the Goal 1 eFAST sensitivity pipeline
 
-The sweep also computes a reusable biphasic index through [compute_biphasic_index.m](/Users/cecilia/Desktop/BME530/mTORC_biphasic_sensitivity/model4/compute_biphasic_index.m), while keeping `final pS6K1` as the primary mTORC1 activity readout.
+The sweep also computes the paper-style biphasic index through [compute_biphasic_index.m](/Users/cecilia/Desktop/BME530/mTORC_biphasic_sensitivity/model4/compute_biphasic_index.m), while keeping `final pS6K1` as the primary mTORC1 activity readout. The curve is normalized to its peak, and the biphasic index is then computed from the normalized low-SIN1 and high-SIN1 endpoints.
 
 ## How To Interpret The Result
 
