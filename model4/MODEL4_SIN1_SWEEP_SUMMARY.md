@@ -33,7 +33,7 @@ For additional context, the sweep also saves:
 
 ## How The Curve Was Generated
 
-The MATLAB script [run_model4_sin1_sweep.m](/Users/hanyiwang/Desktop/BME%20530/mTORC_biphasic_sensitivity/model4/run_model4_sin1_sweep.m) performs the following steps:
+The MATLAB script [run_model4_sin1_sweep.m](/Users/cecilia/Desktop/BME530/mTORC_biphasic_sensitivity/model4/run_model4_sin1_sweep.m) performs the following steps:
 
 1. Load the same Model 4 parameter set and baseline initial conditions used by the baseline simulation.
 2. Identify the `Sin1` state index from `model.stateNames`.
@@ -42,7 +42,15 @@ The MATLAB script [run_model4_sin1_sweep.m](/Users/hanyiwang/Desktop/BME%20530/m
 5. Record the final-time `pS6K1` value as the main mTORC1 output.
 6. Plot initial total SIN1 versus final `pS6K1` on a log-scaled x-axis.
 
-The simulation helper [model4_simulate.m](/Users/hanyiwang/Desktop/BME%20530/mTORC_biphasic_sensitivity/model4/model4_simulate.m) is used so the sweep reuses the same solver settings and observable calculations as the baseline run.
+The simulation helper [model4_simulate.m](/Users/cecilia/Desktop/BME530/mTORC_biphasic_sensitivity/model4/model4_simulate.m) is used so the sweep reuses the same solver settings and observable calculations as the baseline run.
+
+The shared helper [model4_run_sin1_sweep.m](/Users/cecilia/Desktop/BME530/mTORC_biphasic_sensitivity/model4/model4_run_sin1_sweep.m) now underpins:
+
+- the standalone SIN1 sweep script
+- the baseline validation workflow
+- the Goal 1 eFAST sensitivity pipeline
+
+The sweep also computes a reusable biphasic index through [compute_biphasic_index.m](/Users/cecilia/Desktop/BME530/mTORC_biphasic_sensitivity/model4/compute_biphasic_index.m), while keeping `final pS6K1` as the primary mTORC1 activity readout.
 
 ## How To Interpret The Result
 
@@ -80,4 +88,7 @@ The script writes results to `results/model4_sin1_sweep`:
 run('model4/run_model4_sin1_sweep.m')
 ```
 
-This environment does not have a MATLAB executable available, so the sweep was prepared but not executed here.
+This repository now distinguishes between:
+
+- structural reconstruction and qualitative biphasic validation
+- exact paper-level quantitative matching, which still requires explicit figure-by-figure comparison

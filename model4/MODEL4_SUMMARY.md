@@ -8,6 +8,12 @@
 - Source parameters: `paper_model_parameter/ParameterSets.xlsx` sheet `Model 4`
 - Output folder created at runtime: `results/model4_baseline`
 
+## Reconstruction Status
+
+- Structural reconstruction of the published Model 4 ODE system is verified against the local `Model4.txtbc` export.
+- The repository now includes a dedicated validation workflow in [run_model4_validation.m](/Users/cecilia/Desktop/BME530/mTORC_biphasic_sensitivity/model4/run_model4_validation.m) that checks for a non-monotonic SIN1-mTORC1 response with an interior dominant peak.
+- This baseline should be treated as a faithful local reconstruction, not yet as a claim of exact figure-level agreement with every published plot.
+
 ## Assumptions
 
 1. The baseline parameterization is taken to be the best-fitting row from the `Model 4` worksheet, identified as the row with the minimum `Objective function value`.
@@ -102,6 +108,7 @@ Open MATLAB in the project root and run:
 
 ```matlab
 run('model4/run_model4_baseline.m')
+run_model4_validation()
 ```
 
 ## Expected Baseline Behavior

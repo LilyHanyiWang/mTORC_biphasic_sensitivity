@@ -1,0 +1,2 @@
+classification,passes_shape_checks,local_peak_count,peak_sin1,peak_pS6K1,low_sin1_pS6K1,high_sin1_pS6K1,rise_from_low_sin1,drop_to_high_sin1,dynamic_range,peak_to_high_suppression_fraction
+monotonic_or_incomplete,0,0,25.1188643150958,3.08827755177343,3.03824225897335,1.71420738997431,0.0500352928000822,1.37407016179912,1.37407016179912,0.444930916591376

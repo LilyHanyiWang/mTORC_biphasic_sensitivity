@@ -40,6 +40,8 @@ model.params = params;
 model.constants = constants;
 model.stateNames = stateNames;
 model.y0 = y0;
+model.parameterNames = cellstr(parameterNames);
+model.parameterValues = parameterValues(:);
 model.parameterSet = struct( ...
     'id', setIds(bestIndex), ...
     'objective', bestObjective);
