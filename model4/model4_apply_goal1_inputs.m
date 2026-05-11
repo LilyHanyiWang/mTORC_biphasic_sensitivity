@@ -1,4 +1,4 @@
-function [perturbedModel, perturbedY0] = model4_apply_goal1_inputs(model, inputInfo, sampledValues)
+efast_top_rankingsfunction [perturbedModel, perturbedY0] = model4_apply_goal1_inputs(model, inputInfo, sampledValues)
 perturbedModel = model;
 perturbedY0 = model.y0;
 
