@@ -55,30 +55,6 @@ See [`model4/MODEL4_SUMMARY.md`](model4/MODEL4_SUMMARY.md) for the state and rea
 | --- | --- |
 | ![eFAST top rankings](results/model4_efast/efast_top_rankings_white.png) | ![SIN1 dose-response grid](results/model4_local_perturbation/sin1_dose_response_grid.png) |
 
-## How to run
-
-You need MATLAB. Start it in the repository root, then run:
-
-```matlab
-addpath('model4')
-run('model4/run_model4_baseline.m')            % baseline simulation -> results/model4_baseline
-run('model4/run_model4_sin1_sweep.m')          % SIN1 sweep         -> results/model4_sin1_sweep
-run_model4_validation()                        % biphasic shape check -> results/model4_validation
-results = run_model4_efast();                  % eFAST (6,579 configs; slow) -> results/model4_efast
-run('model4/run_model4_local_perturbation.m')  % local perturbation -> results/model4_local_perturbation
-```
-
-The precomputed outputs (CSV, MAT and figures) are already in `results/`. Per-analysis notes are in
-`model4/MODEL4_*_SUMMARY.md`.
-
-## Repository layout
-
-```
-model4/                 MATLAB model, simulation, sweep, eFAST and perturbation code
-paper_model_parameter/  Original model files and parameter sets from Ghomlaghi et al. (MIT License, NguyenLab)
-results/                Simulation outputs and figures for each analysis
-project_report.pdf      Final report
-```
 
 ## References
 
